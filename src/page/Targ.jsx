@@ -7,7 +7,7 @@ import { isValidEmail } from '../helpers/validateEmail'
 import Modal from '../component/Modal'
 import axios from 'axios'
 import { hostURL } from '../helpers/data'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Targ = () => {
   const { search } = useLocation()
@@ -30,6 +30,8 @@ const Targ = () => {
   const [errors, setErrors] = useState([])
 
   const [modalOpen, setModalOpen] = useState(false)
+
+  const navigate = useNavigate()
 
   const handleOpenModal = () => {
     setModalOpen(true)
@@ -165,6 +167,7 @@ const Targ = () => {
         .post(`${hostURL}main`, { ...bundledData })
         .then((resp) => {
           console.log(resp.data)
+          navigate('/feedback')
         })
         .catch((e) => console.log(e))
     }
