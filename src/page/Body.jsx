@@ -10,7 +10,7 @@ const Body = () => {
     setToggle(true)
   }
   return (
-    <div className='text-[#333333]'>
+    <div className='text-[#333333] py-3'>
       {!toggle ? (
         <div className='w-screen md:h-screen flex flex-col items-center  px-7'>
           <section className='flex flex-col items-center mt-3 text-center'>

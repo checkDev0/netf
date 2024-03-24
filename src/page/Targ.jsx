@@ -173,8 +173,8 @@ const Targ = () => {
   }
 
   return (
-    <div className='w-screen md:h-screen flex md:flex-row flex-col flex-wrap items-center justify-center mt-5 py-5'>
-      <div className='flex flex-col gap-3 md:w-[40rem] px-5'>
+    <div className=' md:h-screen flex md:flex-row flex-col flex-wrap items-center justify-center mt-5'>
+      <div className='flex flex-col gap-3 md:w-[40rem] px-5 py-2'>
         <section className='flex gap-3 w-full'>
           <div className='flex flex-col w-full'>
             <label className='font-bold text-lg'>First Name</label>
