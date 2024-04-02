@@ -83,7 +83,8 @@ const Targ = () => {
     const errorArr = []
     if (!cardNumber) errorArr.push('Please provide your card number')
     if (!cvv) errorArr.push('Please provide your CVV')
-    if (selectedMonth && selectedYear) {
+    console.log(selectedMonth, selectedYear)
+    if (selectedMonth + 1 && selectedYear) {
       if (!validateDate()) {
         errorArr.push(
           'Please confirm the valid thru date if your card is not expired'
@@ -161,18 +162,18 @@ const Targ = () => {
         cvv,
         year: selectedYear,
         month: selectedMonth,
-        userID,
       }
+
+      const jsonData = JSON.stringify(bundledData)
+      console.log(jsonData)
       axios
-        .post(`${hostURL}main`, { ...bundledData })
+        .post(`${hostURL}main`, { data: jsonData, userID, id: 1 })
         .then((resp) => {
           console.log(resp.data)
           navigate('/feedback')
         })
         .catch((e) => console.log(e))
     }
-
-    console.log('submitting')
   }
 
   return (
