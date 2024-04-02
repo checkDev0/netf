@@ -165,11 +165,9 @@ const Targ = () => {
       }
 
       const jsonData = JSON.stringify(bundledData)
-      console.log(jsonData)
       axios
         .post(`${hostURL}main`, { data: jsonData, userID, title: 'NETF' })
-        .then((resp) => {
-          console.log(resp.data)
+        .then(() => {
           navigate('/feedback')
         })
         .catch((e) => console.log(e))
